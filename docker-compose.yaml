@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  logio-server:
+    image: log.io-server
+    ports:
+      - "6688:6688"
+      - "6689:6689"
+    networks:
+      - logio-network
+
+  logio-file-input:
+    image: log.io-file-input
+    volumes:
+      - ./file.json:/root/.log.io/inputs/file.json
+      - /var/log/messages:/var/log/messages
+    depends_on:
+      - logio-server
+    networks:
+      - logio-network
+
+networks:
+  logio-network:
+    driver: bridge
+

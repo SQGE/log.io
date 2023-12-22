@@ -1,0 +1,17 @@
+{
+  "messageServer": {
+    "port": 6689,
+    "host": "0.0.0.0"
+  },
+  "httpServer": {
+    "port": 6688,
+    "host": "0.0.0.0"
+  },
+  "debug": false,
+  "basicAuth": {
+    "realm": "abc123xyz",
+    "users": {
+      "username1": "password1"
+    }
+  }
+}
